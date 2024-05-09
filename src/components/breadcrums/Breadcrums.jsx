@@ -5,7 +5,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 const Breadcrums = () => {
   return (
     <nav className="flex" aria-label="Breadcrumb">
-      <ol className="inline-flex items-center justify-center space-x-1 rtl:space-x-reverse ml-14 p-4">
+      <ol className="inline-flex items-center justify-center space-x-1 rtl:space-x-reverse ml-14 p-4 mt-5">
         <li className="inline-flex items-center">
           <div className="flex items-center">
             <HomeRoundedIcon sx={{ fontSize: 25, color: "#686671" }} />

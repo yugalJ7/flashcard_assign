@@ -40,7 +40,7 @@ const Navbar = () => {
                 <li key={items.id}>
                   <a
                     href="#"
-                    className={`block py-2 px-3 text-black  rounded md:bg-transparent md:py-2 ${
+                    className={`block py-2 px-3 text-black font-light  rounded md:bg-transparent md:py-2 ${
                       items.id === 5
                         ? "gradient md:px-8 md:py-2 rounded-full flex items-center justify-center text-white"
                         : ""
