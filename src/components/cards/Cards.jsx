@@ -18,13 +18,13 @@ const cardNavItems = [
 const Cards = () => {
   return (
     <>
-      <div className="card-header mt-5 ml-14 p-4 text-3xl font-semibold">
-        <span className="bg-gradient-to-t from-blue-700 to-blue-900 text-transparent inline-block bg-clip-text">
+      <div className="card-header mt-5 ml-1 sm:ml-14 p-4  font-semibold">
+        <span className="bg-gradient-to-t from-blue-700 to-blue-900 text-transparent inline-block bg-clip-text sm:text-3xl text-2xl">
           Relations and Functions ( Mathematics )
         </span>
       </div>
       <div className="card-body flex flex-col items-center justify-center mt-5 gap-5">
-        <div className="card-body_navbar w-2/6 p-1 h-7">
+        <div className="card-body_navbar w-4/6 sm:w-2/6 p-1 h-7">
           <ul className="flex justify-around">
             {cardNavItems.map((items) => {
               return (
@@ -38,7 +38,7 @@ const Cards = () => {
             })}
           </ul>
         </div>
-        <div className="card-body_flashcard relative flex items-center justify-center gradient h-72 w-[35%] rounded-[30px]">
+        <div className="card-body_flashcard relative flex items-center justify-center gradient h-72 w-3/4 sm:w-[35%] rounded-[30px]">
           <div className="absolute top-6 px-6 bg-clip-text flex justify-between w-full">
             <LightbulbOutlinedIcon className="bg-clip-text text-white" />
             <VolumeUpIcon className="bg-clip-text text-white" />
@@ -47,7 +47,7 @@ const Cards = () => {
             9 + 6 + 7x - 2x - 3
           </span>
         </div>
-        <div className="card-body_navigation flex justify-around items-center w-2/6">
+        <div className="card-body_navigation flex justify-around items-center w-4/6 sm:w-2/6">
           <IconContext.Provider
             value={{
               color: "#051883",
@@ -60,9 +60,13 @@ const Cards = () => {
             <IoMdQrScanner size={25} />
           </IconContext.Provider>
         </div>
-        <div className="card-body_footer flex items-center justify-between w-full px-16 mt-9">
-          <img src="/assets/logotwo.png" alt="logo" className="h-24 w-52" />
-          <div>
+        <div className="card-body_footer flex items-center flex-row justify-between w-full px-16 mt-9">
+          <img
+            src="/assets/logotwo.png"
+            alt="logo"
+            className="h-24 w-52 hidden sm:block"
+          />
+          <div className="flex items-center justify-center">
             <AddCircleIcon
               fontSize="large"
               sx={{

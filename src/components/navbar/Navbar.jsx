@@ -18,7 +18,7 @@ const Navbar = () => {
   };
   return (
     <nav className=" border-gray-200 ">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-14 py-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between ml-1 sm:mx-14 py-4">
         <a href="https://www.hyggexworld.com/" className="cursor-pointer">
           <img src="/assets/logo.png" className="h-12 w-40" alt="Hyggex Logo" />
         </a>

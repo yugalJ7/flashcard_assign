@@ -1,168 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
+const faqData = [
+  { id: 1, text: "Can education flashcards be used for all age groups?" },
+  { id: 2, text: "How do education flashcards work?" },
+  { id: 3, text: "Can education flashcards be used for test preparation" },
+];
 
 const Footer = () => {
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  const handleClick = (index) => {
+    setActiveIndex(index === activeIndex ? -1 : index);
+  };
   return (
     <section className="py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <h2 className="text-4xl font-manrope text-center font-bold text-gray-900 leading-[3.25rem]">
+      <div className="ml-1 sm:ml-14 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10">
+          <h2 className="text-4xl font-vietnam text-left font-bold  leading-[3.25rem]">
             FAQ
           </h2>
         </div>
-        <div className="accordion-group" data-accordion="default-accordion">
-          <div
-            className="accordion py-8 px-6 border-b border-solid border-gray-200 transition-all duration-500 rounded-2xl hover:bg-indigo-50 accordion-active:bg-indigo-50 active"
-            id="basic-heading-one-with-arrow"
-          >
-            <button
-              className="accordion-toggle group inline-flex items-center justify-between leading-8 text-gray-900 w-full transition duration-500 text-left hover:text-indigo-600 accordion-active:font-medium accordion-active:text-indigo-600"
-              aria-controls="basic-collapse-one-with-arrow"
-            >
-              <h5>How do I update my billing information?</h5>
-              <svg
-                className="text-gray-500 transition duration-500 group-hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:rotate-180"
-                width={22}
-                height={22}
-                viewBox="0 0 22 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+        <div>
+          {faqData.map((items) => {
+            return (
+              <div
+                key={items.id}
+                className="accordion mb-6 py-4 px-6 border-2 border-solid border-[#051883] transition-all duration-500 rounded-2xl w-3/4"
               >
-                <path
-                  d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-            <div
-              id="basic-collapse-one-with-arrow"
-              className="accordion-content w-full px-0 overflow-hidden"
-              aria-labelledby="basic-heading-one-with-arrow"
-              style={{ maxHeight: 250 }}
-            >
-              <p className="text-base text-gray-900 leading-6">
-                To contact customer support, look for a 'Contact us' or 'Help'
-                button or link on the website or platform. You may be able to
-                email, call, or chat with customer support for assistance.
-              </p>
-            </div>
-          </div>
-          <div
-            className="accordion py-8 px-6 border-b border-solid border-gray-200 transition-all duration-500 rounded-2xl hover:bg-indigo-50 accordion-active:bg-indigo-50"
-            id="basic-heading-two-with-arrow"
-          >
-            <button
-              className="accordion-toggle group inline-flex items-center justify-between leading-8 text-gray-900 w-full transition duration-500 text-left hover:text-indigo-600 accordion-active:text-indigo-600"
-              aria-controls="basic-collapse-two-with-arrow"
-            >
-              <h5>How can I contact customer support?</h5>
-              <svg
-                className="text-gray-500 transition duration-500 group-hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:rotate-180"
-                width={22}
-                height={22}
-                viewBox="0 0 22 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-            <div
-              id="basic-collapse-two-with-arrow"
-              className="accordion-content w-full px-0 overflow-hidden"
-              aria-labelledby="basic-heading-two-with-arrow"
-            >
-              <p className="text-base text-gray-900 leading-6">
-                To contact customer support, look for a 'Contact us' or 'Help'
-                button or link on the website or platform. You may be able to
-                email, call, or chat with customer support for assistance.
-              </p>
-            </div>
-          </div>
-          <div
-            className="accordion py-8 px-6 border-b border-solid border-gray-200 transition-all duration-500 rounded-2xl hover:bg-indigo-50 accordion-active:bg-indigo-50"
-            id="basic-heading-three-with-arrow"
-          >
-            <button
-              className="accordion-toggle group inline-flex items-center justify-between leading-8 text-gray-900 w-full transition duration-500 text-left hover:text-indigo-600 accordion-active:text-indigo-600"
-              aria-controls="basic-collapse-three-with-arrow"
-            >
-              <h5>How do I update my profile information?</h5>
-              <svg
-                className="text-gray-500 transition duration-500 group-hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:rotate-180"
-                width={22}
-                height={22}
-                viewBox="0 0 22 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-            <div
-              id="basic-collapse-three-with-arrow"
-              className="accordion-content w-full px-0 overflow-hidden"
-              aria-labelledby="basic-heading-three-with-arrow"
-            >
-              <p className="text-base text-gray-900 leading-6">
-                To contact customer support, look for a 'Contact us' or 'Help'
-                button or link on the website or platform. You may be able to
-                email, call, or chat with customer support for assistance.
-              </p>
-            </div>
-          </div>
-          <div
-            className="accordion py-8 px-6 transition-all duration-500 rounded-2xl hover:bg-indigo-50 accordion-active:bg-indigo-50"
-            id="basic-heading-three-with-arrow"
-          >
-            <button
-              className="accordion-toggle group inline-flex items-center justify-between leading-8 text-gray-900 w-full transition duration-500 text-left hover:text-indigo-600 accordion-active:text-indigo-600"
-              aria-controls="basic-collapse-three-with-arrow"
-            >
-              <h5>How do I find my purchase history?</h5>
-              <svg
-                className="text-gray-500 transition duration-500 group-hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:rotate-180"
-                width={22}
-                height={22}
-                viewBox="0 0 22 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-            <div
-              id="basic-collapse-three-with-arrow"
-              className="accordion-content w-full px-0 overflow-hidden"
-              aria-labelledby="basic-heading-three-with-arrow"
-            >
-              <p className="text-base text-gray-900 leading-6">
-                To contact customer support, look for a 'Contact us' or 'Help'
-                button or link on the website or platform. You may be able to
-                email, call, or chat with customer support for assistance.
-              </p>
-            </div>
-          </div>
+                <button
+                  onClick={() => handleClick(items.id)}
+                  className="inline-flex items-center justify-between leading-8 text-gray-900 w-full transition duration-500 text-left"
+                >
+                  <h5>{items.text}</h5>
+                  <KeyboardArrowDownIcon />
+                </button>
+                {items.id === activeIndex && (
+                  <div className="w-full px-0" style={{ maxHeight: 250 }}>
+                    <p className="text-base text-gray-900 leading-6">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Necessitatibus, neque?
+                    </p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
